@@ -143,6 +143,12 @@
     <Compile Include="PaySlip.Designer.cs">
       <DependentUpon>PaySlip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Printslip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printslip.Designer.cs">
+      <DependentUpon>Printslip.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaySlip.resx">
       <DependentUpon>PaySlip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printslip.resx">
+      <DependentUpon>Printslip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductEntry.resx">
       <DependentUpon>ProductEntry.cs</DependentUpon>

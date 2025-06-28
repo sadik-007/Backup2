@@ -79,6 +79,7 @@ namespace ProjectPP
             }
         }
 
+
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
             UpdateTotalPrice();
@@ -86,8 +87,28 @@ namespace ProjectPP
 
         private void btnConfirmSell_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sale recorded successfully!", "Sale Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            if (int.TryParse(txtQuantity.Text, out int qty) && qty > 0 && qty <= _availableQty)
+            {
+                decimal totalPrice = qty * _unitPrice;
+
+                // Don't pass image to Printslip anymore
+                Printslip slip = new Printslip(
+                    _model,
+                    _productCode,
+                    _productType,
+                    _unitPrice,
+                    qty,
+                    totalPrice,
+                    _features
+                );
+                slip.ShowDialog();
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid quantity.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

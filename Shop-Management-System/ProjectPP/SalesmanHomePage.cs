@@ -18,7 +18,7 @@ namespace ProjectPP
             InitializeComponent();
             _salesmanName = salesmanName;
         }
-
+        //Mahir
         private void SalesmanHomePage_Load(object sender, EventArgs e)
         {
             lblWelcomeUser.Text = "👤 Welcome, " + _salesmanName;
@@ -139,16 +139,36 @@ namespace ProjectPP
             LinkLabel detailsLink = new LinkLabel { Text = "View Details", Font = new Font("Segoe UI", 10F), LinkColor = Color.DodgerBlue, Margin = new Padding(5, 5, 20, 5), AutoSize = true, TabStop = false };
             detailsLink.LinkClicked += (s, ev) => { MessageBox.Show(keyFeatures, "Key Features: " + model); };
 
-            Button buyButton = new Button { Text = "Buy Now", Font = new Font("Segoe UI", 10F, FontStyle.Bold), BackColor = Color.FromArgb(40, 167, 69), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Size = new Size(120, 35) };
-            buyButton.FlatAppearance.BorderSize = 0;
-            buyButton.Click += (s, ev) =>
+            // Updated: Sell Product Button
+            Button sellButton = new Button
             {
-                PurchasePage purchaseForm = new PurchasePage(imageData, model, currentPrice, productCode, productType, keyFeatures, status);
-                purchaseForm.ShowDialog(this);
+                Text = "Sell Product",
+                Font = new Font("Segoe UI", 10F, FontStyle.Bold),
+                BackColor = Color.FromArgb(0, 123, 255),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(120, 35)
+            };
+            sellButton.FlatAppearance.BorderSize = 0;
+
+            sellButton.Click += (s, ev) =>
+            {
+                int availableQty = status.ToLower() == "in stock" ? 10 : 0; // Default, or pull from DB if needed
+
+                SellItem sellForm = new SellItem(
+                    imageData,
+                    model,
+                    currentPrice,
+                    productCode,
+                    productType,
+                    keyFeatures,
+                    availableQty
+                );
+                sellForm.ShowDialog(this);
             };
 
             actionsPanel.Controls.Add(detailsLink);
-            actionsPanel.Controls.Add(buyButton);
+            actionsPanel.Controls.Add(sellButton);
 
             card.Controls.Add(actionsPanel);
             card.Controls.Add(pricePanel);
@@ -219,7 +239,7 @@ namespace ProjectPP
             this.Close();
         }
 
-        // Empty button event handlers kept for future use
+        // Empty event stubs
         private void btnMonitor_Click(object sender, EventArgs e) { }
         private void btnAccessories_Click(object sender, EventArgs e) { }
         private void btnTV_Click(object sender, EventArgs e) { }
@@ -233,9 +253,6 @@ namespace ProjectPP
         private void btnHeadphones_Click(object sender, EventArgs e) { }
         private void btnWebcam_Click(object sender, EventArgs e) { }
 
-        private void txtSearch_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        private void txtSearch_TextChanged_1(object sender, EventArgs e) { }
     }
 }

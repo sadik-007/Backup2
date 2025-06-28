@@ -38,12 +38,13 @@
             // reqrequest
             // 
             this.reqrequest.AutoSize = true;
-            this.reqrequest.Font = new System.Drawing.Font("Siyam Rupali", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqrequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqrequest.Location = new System.Drawing.Point(22, 30);
             this.reqrequest.Name = "reqrequest";
-            this.reqrequest.Size = new System.Drawing.Size(196, 46);
+            this.reqrequest.Size = new System.Drawing.Size(190, 32);
             this.reqrequest.TabIndex = 0;
-            this.reqrequest.Text = "Request List:";
+            this.reqrequest.Text = "Account List:";
+            this.reqrequest.Click += new System.EventHandler(this.reqrequest_Click);
             // 
             // dataGridView1
             // 
@@ -57,7 +58,7 @@
             // 
             // reqback
             // 
-            this.reqback.Font = new System.Drawing.Font("Siyam Rupali", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqback.Location = new System.Drawing.Point(51, 649);
             this.reqback.Name = "reqback";
             this.reqback.Size = new System.Drawing.Size(82, 42);

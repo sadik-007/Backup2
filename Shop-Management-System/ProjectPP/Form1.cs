@@ -56,7 +56,7 @@ namespace ProjectPP
                             if (result != null)
                             {
                                 string fullName = result.ToString();
-                                
+
                                 CustomerHomePage customerHome = new CustomerHomePage(fullName);
                                 customerHome.Show();
                                 this.Hide();

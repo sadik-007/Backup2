@@ -13,23 +13,23 @@ namespace ProjectPP
             InitializeComponent();
         }
 
+        // Back button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminLog admlog = new AdminLog();
+            admlog.Show();
+            this.Hide();
+        }
+
+        // Proceed/Change button
         private void resetchange_Click(object sender, EventArgs e)
         {
             string username = resettextBoxusername.Text.Trim();
-            string newPassword = resettextBoxnew.Text.Trim();
-            string confirmPassword = resetconfirm.Text.Trim();
+            string gmail = resettextBoxgmail.Text.Trim();
 
-            // 1. Check for empty fields
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(gmail))
             {
-                MessageBox.Show("Please fill out all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // 2. Check if new password and confirm password match
-            if (!newPassword.Equals(confirmPassword))
-            {
-                MessageBox.Show("New password and confirm password do not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter both Username and Gmail.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -39,57 +39,39 @@ namespace ProjectPP
                 {
                     sqlCon.Open();
 
-                    // 3. Check if admin username exists
-                    string checkQuery = "SELECT COUNT(1) FROM Admins WHERE User_Name = @Username";
-                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, sqlCon))
+                    string query = "SELECT COUNT(1) FROM Admins WHERE User_Name = @Username AND Gmail = @Gmail";
+
+                    using (SqlCommand sqlCmd = new SqlCommand(query, sqlCon))
                     {
-                        checkCmd.Parameters.AddWithValue("@Username", username);
-                        int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        sqlCmd.Parameters.AddWithValue("@Username", username);
+                        sqlCmd.Parameters.AddWithValue("@Gmail", gmail);
 
-                        if (exists == 0)
+                        int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+
+                        if (count == 1)
                         {
-                            MessageBox.Show("Admin username not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                    }
-
-                    // 4. Update the password
-                    string updateQuery = "UPDATE Admins SET Password = @Password WHERE User_Name = @Username";
-                    using (SqlCommand updateCmd = new SqlCommand(updateQuery, sqlCon))
-                    {
-                        updateCmd.Parameters.AddWithValue("@Password", newPassword);
-                        updateCmd.Parameters.AddWithValue("@Username", username);
-
-                        int rows = updateCmd.ExecuteNonQuery();
-
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Password reset successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Redirect to login
-                            AdminLog admlog = new AdminLog();
-                            admlog.Show();
+                            // Open admnewpass form
+                            admnewpass newPassForm = new admnewpass(username);
+                            newPassForm.Show();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("Password reset failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Username and/or Gmail not found. Please try again.", "Validation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // Optional if you wired TextChanged in designer
+        private void resettextBoxusername_TextChanged(object sender, EventArgs e)
         {
-            // Optional: Go back to login
-            AdminLog admlog = new AdminLog();
-            admlog.Show();
-            this.Hide();
+            // Optional: leave empty or remove if unused
         }
     }
 }

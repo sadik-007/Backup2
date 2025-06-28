@@ -52,6 +52,12 @@
     <Compile Include="AdminLog.Designer.cs">
       <DependentUpon>AdminLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="admnewpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admnewpass.Designer.cs">
+      <DependentUpon>admnewpass.cs</DependentUpon>
+    </Compile>
     <Compile Include="admnotifi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,7 @@
     <Compile Include="admwork.Designer.cs">
       <DependentUpon>admwork.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="CustomerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +137,12 @@
     <Compile Include="NewPassSales.Designer.cs">
       <DependentUpon>NewPassSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaySlip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaySlip.Designer.cs">
+      <DependentUpon>PaySlip.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +181,12 @@
     <Compile Include="SalesmanLog.Designer.cs">
       <DependentUpon>SalesmanLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Salesmanproductentry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salesmanproductentry.Designer.cs">
+      <DependentUpon>Salesmanproductentry.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +207,9 @@
     </Compile>
     <EmbeddedResource Include="AdminLog.resx">
       <DependentUpon>AdminLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admnewpass.resx">
+      <DependentUpon>admnewpass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admnotifi.resx">
       <DependentUpon>admnotifi.cs</DependentUpon>
@@ -228,6 +250,9 @@
     <EmbeddedResource Include="NewPassSales.resx">
       <DependentUpon>NewPassSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaySlip.resx">
+      <DependentUpon>PaySlip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductEntry.resx">
       <DependentUpon>ProductEntry.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesmanLog.resx">
       <DependentUpon>SalesmanLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salesmanproductentry.resx">
+      <DependentUpon>Salesmanproductentry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesRegistration.resx">
       <DependentUpon>SalesRegistration.cs</DependentUpon>

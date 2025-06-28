@@ -146,5 +146,12 @@ namespace ProjectPP
         {
 
         }
+
+        private void productback_Click(object sender, EventArgs e)
+        {
+            admwork admWork = new admwork();
+            admWork.Show();
+            this.Hide();
+        }
     }
 }

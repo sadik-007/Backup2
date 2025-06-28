@@ -162,3 +162,6 @@ D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admwork.
 D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admnotifi.resources
 D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admrequest.resources
 D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.SellItem.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.PaySlip.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admnewpass.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Salesmanproductentry.resources

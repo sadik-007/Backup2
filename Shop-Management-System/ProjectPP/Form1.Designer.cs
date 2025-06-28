@@ -43,7 +43,7 @@
             this.pnlMain.Controls.Add(this.txtUserName);
             this.pnlMain.Controls.Add(this.LbUname);
             this.pnlMain.Controls.Add(this.label1);
-            this.pnlMain.Location = new System.Drawing.Point(391, 76);
+            this.pnlMain.Location = new System.Drawing.Point(341, 76);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(500, 550);
             this.pnlMain.TabIndex = 0;
@@ -177,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1282, 703);
+            this.ClientSize = new System.Drawing.Size(1182, 703);
             this.Controls.Add(this.pnlMain);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

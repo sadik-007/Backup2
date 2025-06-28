@@ -18,6 +18,8 @@ namespace ProjectPP
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Starting());
             //Application.Run(new ProductEntry());
+            //Application.Run(new PurchasePage());
+
         }
     }
 }

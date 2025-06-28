@@ -57,10 +57,10 @@
             // 
             // notifiback
             // 
-            this.notifiback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifiback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifiback.Location = new System.Drawing.Point(94, 635);
             this.notifiback.Name = "notifiback";
-            this.notifiback.Size = new System.Drawing.Size(75, 56);
+            this.notifiback.Size = new System.Drawing.Size(94, 56);
             this.notifiback.TabIndex = 2;
             this.notifiback.Text = "Back";
             this.notifiback.UseVisualStyleBackColor = true;

@@ -38,6 +38,7 @@
             this.btnBrowseImage = new System.Windows.Forms.Button();
             this.btnSaveProduct = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.productback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProductImage)).BeginInit();
             this.SuspendLayout();
@@ -280,12 +281,24 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // productback
+            // 
+            this.productback.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productback.Location = new System.Drawing.Point(22, 550);
+            this.productback.Name = "productback";
+            this.productback.Size = new System.Drawing.Size(99, 55);
+            this.productback.TabIndex = 20;
+            this.productback.Text = "Back";
+            this.productback.UseVisualStyleBackColor = true;
+            this.productback.Click += new System.EventHandler(this.productback_Click);
+            // 
             // ProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1062, 653);
+            this.Controls.Add(this.productback);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSaveProduct);
             this.Controls.Add(this.btnBrowseImage);
@@ -344,5 +357,6 @@
         private System.Windows.Forms.Button btnBrowseImage;
         private System.Windows.Forms.Button btnSaveProduct;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button productback;
     }
 }

@@ -9,12 +9,6 @@ namespace ProjectPP
     {
         private byte[] _imageData;
         private string _model, _productCode, _productType, _features, _status;
-
-        private void picProduct_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private decimal _price;
 
         public PurchasePage(byte[] imageData, string model, decimal price, string productCode, string productType, string features, string status)

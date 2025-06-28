@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // <-- Make sure this is added
+using System.Data.SqlClient;
 
 namespace ProjectPP
 {
@@ -22,11 +22,9 @@ namespace ProjectPP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Get the user input
-            string userName = richTextBox2.Text; // User Name from the form
-            string gmail = richTextBox1.Text;    // Gmail from the form
+            string userName = richTextBox2.Text;
+            string gmail = richTextBox1.Text;
 
-            // Basic validation
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(gmail))
             {
                 MessageBox.Show("Please enter both User Name and Gmail.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -38,29 +36,23 @@ namespace ProjectPP
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-
-                    // Query to check if the username and gmail combination exists
+                    // This query assumes you have a 'Gmail' column in your 'Customer' table
                     string query = "SELECT COUNT(1) FROM Customer WHERE User_Name = @UserName AND Gmail = @Gmail";
 
                     using (SqlCommand sqlCmd = new SqlCommand(query, sqlCon))
                     {
                         sqlCmd.Parameters.AddWithValue("@UserName", userName);
                         sqlCmd.Parameters.AddWithValue("@Gmail", gmail);
-
                         int count = (int)sqlCmd.ExecuteScalar();
 
-                        // If count is 1, a user was found with that username and gmail
                         if (count == 1)
                         {
-                            // Match found, open the NewPass form
-                            // We pass the username to the NewPass form so it knows who to update.
                             NewPass newPassForm = new NewPass(userName);
                             newPassForm.Show();
-                            this.Hide(); // Hide the current Reset form
+                            this.Hide();
                         }
                         else
                         {
-                            // No match found
                             MessageBox.Show("User Name and/or Gmail not found. Please try again.", "Validation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -70,6 +62,30 @@ namespace ProjectPP
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // --- NEW METHOD FOR THE "BACK TO LOGIN" LINK ---
+        private void linkBackToLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Find the original Form1 that was hidden
+            Form1 loginForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if (loginForm != null)
+            {
+                loginForm.Show();
+            }
+            else
+            {
+                // As a backup, create a new one
+                loginForm = new Form1("Customer");
+                loginForm.Show();
+            }
+            // Close this Reset form
+            this.Close();
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            // This is not used but required by the designer.
         }
     }
 }

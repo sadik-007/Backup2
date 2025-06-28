@@ -103,6 +103,26 @@ namespace ProjectPP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pexels_photo_531880 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-photo-531880", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_timmossholder_2096622 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-timmossholder-2096622", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_reset_password_to_gain_more_secure_account_png_image_8920326 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-reset-password-to-gain-more-secure-account-png-image_8920326", resourceCulture);

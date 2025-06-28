@@ -45,5 +45,11 @@ namespace ProjectPP
             admreq.Show();
             this.Hide();
         }
+
+        private void workorder_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

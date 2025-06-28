@@ -32,12 +32,13 @@
             this.workproduct = new System.Windows.Forms.Button();
             this.worknoti = new System.Windows.Forms.Button();
             this.workback = new System.Windows.Forms.Button();
+            this.workorder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // workreq
             // 
             this.workreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workreq.Location = new System.Drawing.Point(148, 104);
+            this.workreq.Location = new System.Drawing.Point(148, 71);
             this.workreq.Name = "workreq";
             this.workreq.Size = new System.Drawing.Size(461, 106);
             this.workreq.TabIndex = 0;
@@ -48,7 +49,7 @@
             // workproduct
             // 
             this.workproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workproduct.Location = new System.Drawing.Point(148, 267);
+            this.workproduct.Location = new System.Drawing.Point(148, 240);
             this.workproduct.Name = "workproduct";
             this.workproduct.Size = new System.Drawing.Size(461, 113);
             this.workproduct.TabIndex = 1;
@@ -59,7 +60,7 @@
             // worknoti
             // 
             this.worknoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.worknoti.Location = new System.Drawing.Point(148, 439);
+            this.worknoti.Location = new System.Drawing.Point(148, 413);
             this.worknoti.Name = "worknoti";
             this.worknoti.Size = new System.Drawing.Size(461, 96);
             this.worknoti.TabIndex = 2;
@@ -70,7 +71,7 @@
             // workback
             // 
             this.workback.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workback.Location = new System.Drawing.Point(887, 591);
+            this.workback.Location = new System.Drawing.Point(947, 607);
             this.workback.Name = "workback";
             this.workback.Size = new System.Drawing.Size(102, 57);
             this.workback.TabIndex = 3;
@@ -78,11 +79,23 @@
             this.workback.UseVisualStyleBackColor = true;
             this.workback.Click += new System.EventHandler(this.workback_Click);
             // 
+            // workorder
+            // 
+            this.workorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workorder.Location = new System.Drawing.Point(148, 568);
+            this.workorder.Name = "workorder";
+            this.workorder.Size = new System.Drawing.Size(461, 96);
+            this.workorder.TabIndex = 4;
+            this.workorder.Text = "Order";
+            this.workorder.UseVisualStyleBackColor = true;
+            this.workorder.Click += new System.EventHandler(this.workorder_Click);
+            // 
             // admwork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 703);
+            this.Controls.Add(this.workorder);
             this.Controls.Add(this.workback);
             this.Controls.Add(this.worknoti);
             this.Controls.Add(this.workproduct);
@@ -100,5 +113,6 @@
         private System.Windows.Forms.Button workproduct;
         private System.Windows.Forms.Button worknoti;
         private System.Windows.Forms.Button workback;
+        private System.Windows.Forms.Button workorder;
     }
 }

@@ -177,6 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.BackgroundImage = global::ProjectPP.Properties.Resources.pexels_timmossholder_2096622;
             this.ClientSize = new System.Drawing.Size(1182, 703);
             this.Controls.Add(this.pnlMain);
             this.Name = "Form1";

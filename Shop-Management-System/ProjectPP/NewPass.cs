@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace ProjectPP
 {
@@ -20,6 +16,10 @@ namespace ProjectPP
         {
             InitializeComponent();
             _userName = userName;
+        }
+
+        private void NewPass_Load(object sender, EventArgs e)
+        {
             this.Text = "Set New Password for " + _userName;
         }
 
@@ -36,7 +36,7 @@ namespace ProjectPP
 
             if (newPassword != confirmPassword)
             {
-                MessageBox.Show("Both password should be same.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -56,21 +56,10 @@ namespace ProjectPP
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Password updated successfully..", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            Form resetForm = Application.OpenForms.OfType<Reset>().FirstOrDefault();
-                            if (resetForm != null)
-                            {
-                                resetForm.Close();
-                            }
-
-                            Form1 loginForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
-                            if (loginForm != null)
-                            {
-                                loginForm.Show();
-                            }
-
-                            this.Close();
+                            // Call the new link click logic to navigate back
+                            linkBackToLogin_LinkClicked(sender, null);
                         }
                         else
                         {
@@ -85,23 +74,44 @@ namespace ProjectPP
             }
         }
 
-        // --- NEW METHOD that handles BOTH eye buttons ---
         private void togglePasswordVisibility_Click(object sender, EventArgs e)
         {
-            // First, figure out which button was clicked.
             Button clickedButton = sender as Button;
-
-            // Check the name of the button to decide which textbox to change.
             if (clickedButton.Name == "btnShowNewPassword")
             {
-                // Toggle the 'New Password' textbox
                 txtNewPassword.UseSystemPasswordChar = !txtNewPassword.UseSystemPasswordChar;
             }
             else if (clickedButton.Name == "btnShowConfirmPassword")
             {
-                // Toggle the 'Confirm Password' textbox
                 txtConfirmPassword.UseSystemPasswordChar = !txtConfirmPassword.UseSystemPasswordChar;
             }
+        }
+
+        // --- NEW METHOD FOR THE "BACK TO LOGIN PAGE" LINK ---
+        private void linkBackToLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Find the original login form that is hidden
+            Form1 loginForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if (loginForm != null)
+            {
+                loginForm.Show();
+            }
+            else
+            {
+                // As a backup, create a new customer login form
+                loginForm = new Form1("Customer");
+                loginForm.Show();
+            }
+
+            // Find and close the intermediate Reset form
+            Form resetForm = Application.OpenForms.OfType<Reset>().FirstOrDefault();
+            if (resetForm != null)
+            {
+                resetForm.Close();
+            }
+
+            // Close this form
+            this.Close();
         }
     }
 }

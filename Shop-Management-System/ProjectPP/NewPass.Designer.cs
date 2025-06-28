@@ -3,6 +3,7 @@
     partial class NewPass
     {
         private System.ComponentModel.IContainer components = null;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,6 +24,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnShowConfirmPassword = new System.Windows.Forms.Button();
             this.btnShowNewPassword = new System.Windows.Forms.Button();
+            this.linkBackToLogin = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblNewPassword
@@ -70,7 +72,7 @@
             this.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePassword.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePassword.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePassword.Location = new System.Drawing.Point(346, 542);
+            this.btnUpdatePassword.Location = new System.Drawing.Point(346, 500);
             this.btnUpdatePassword.Name = "btnUpdatePassword";
             this.btnUpdatePassword.Size = new System.Drawing.Size(445, 75);
             this.btnUpdatePassword.TabIndex = 7;
@@ -116,10 +118,24 @@
             this.btnShowNewPassword.UseVisualStyleBackColor = false;
             this.btnShowNewPassword.Click += new System.EventHandler(this.togglePasswordVisibility_Click);
             // 
+            // linkBackToLogin
+            // 
+            this.linkBackToLogin.AutoSize = true;
+            this.linkBackToLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.linkBackToLogin.LinkColor = System.Drawing.Color.Gray;
+            this.linkBackToLogin.Location = new System.Drawing.Point(485, 595);
+            this.linkBackToLogin.Name = "linkBackToLogin";
+            this.linkBackToLogin.Size = new System.Drawing.Size(155, 23);
+            this.linkBackToLogin.TabIndex = 8;
+            this.linkBackToLogin.TabStop = true;
+            this.linkBackToLogin.Text = "Back to Login Page";
+            this.linkBackToLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkBackToLogin_LinkClicked);
+            // 
             // NewPass
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1182, 703);
+            this.Controls.Add(this.linkBackToLogin);
             this.Controls.Add(this.btnShowNewPassword);
             this.Controls.Add(this.btnShowConfirmPassword);
             this.Controls.Add(this.btnUpdatePassword);
@@ -131,9 +147,9 @@
             this.Name = "NewPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Set New Password";
+            this.Load += new System.EventHandler(this.NewPass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
 
@@ -145,5 +161,6 @@
         private System.Windows.Forms.Button btnUpdatePassword;
         private System.Windows.Forms.Button btnShowConfirmPassword;
         private System.Windows.Forms.Button btnShowNewPassword;
+        private System.Windows.Forms.LinkLabel linkBackToLogin;
     }
 }

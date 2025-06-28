@@ -166,3 +166,4 @@ D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.PaySlip.
 D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admnewpass.resources
 D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Salesmanproductentry.resources
 D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Printslip.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admorder.resources

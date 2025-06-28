@@ -20,212 +20,178 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblProductPrice = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblPointsAdded = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblCurrentPoints = new System.Windows.Forms.Label();
-            this.chkUsePoints = new System.Windows.Forms.CheckBox();
-            this.numPointsToUse = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblReducedPrice = new System.Windows.Forms.Label();
-            this.btnCompletePurchase = new System.Windows.Forms.Button();
+            this.lblTotalPoints = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.numPointsToUse)).BeginInit();
+            this.lblTransactionInfo = new System.Windows.Forms.Label();
+            this.lblThankYou = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.lblTitle.Location = new System.Drawing.Point(30, 25);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(40, 167, 69);
+            this.lblTitle.Location = new System.Drawing.Point(50, 30);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(155, 45);
+            this.lblTitle.Size = new System.Drawing.Size(374, 46);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Pay Slip";
+            this.lblTitle.Text = "Purchase Successful!";
             // 
-            // label2
+            // lblTransactionInfo
+            // 
+            this.lblTransactionInfo.AutoSize = true;
+            this.lblTransactionInfo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblTransactionInfo.ForeColor = System.Drawing.Color.Gray;
+            this.lblTransactionInfo.Location = new System.Drawing.Point(55, 80);
+            this.lblTransactionInfo.Name = "lblTransactionInfo";
+            this.lblTransactionInfo.Size = new System.Drawing.Size(142, 23);
+            this.lblTransactionInfo.TabIndex = 1;
+            this.lblTransactionInfo.Text = "Transaction Info...";
+            // 
+            // label2 - Customer
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(33, 90);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label2.Location = new System.Drawing.Point(55, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 28);
-            this.label2.TabIndex = 1;
+            this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.Text = "Customer:";
             // 
             // lblUserName
-            // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(230, 90);
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblUserName.Location = new System.Drawing.Point(220, 140);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(117, 28);
-            this.lblUserName.TabIndex = 2;
+            this.lblUserName.Size = new System.Drawing.Size(113, 25);
             this.lblUserName.Text = "User Name";
             // 
-            // label4
-            // 
+            // label4 - Product
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(33, 130);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label4.Location = new System.Drawing.Point(55, 180);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Product Price:";
+            this.label4.Size = new System.Drawing.Size(83, 25);
+            this.label4.Text = "Product:";
             // 
-            // lblProductPrice
+            // lblProductName
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblProductName.Location = new System.Drawing.Point(220, 180);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(141, 25);
+            this.lblProductName.Text = "Product Name";
             // 
-            this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductPrice.Location = new System.Drawing.Point(230, 130);
-            this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(95, 28);
-            this.lblProductPrice.TabIndex = 4;
-            this.lblProductPrice.Text = "৳10,000";
+            // label5 - Price
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label5.Location = new System.Drawing.Point(55, 220);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 25);
+            this.label5.Text = "Price:";
             // 
-            // label6
+            // lblPrice
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.Location = new System.Drawing.Point(220, 220);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(94, 25);
+            this.lblPrice.Text = "৳10,000";
             // 
+            // panel1 - separator
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Location = new System.Drawing.Point(60, 260);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(450, 2);
+            // 
+            // label6 - Points Earned
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(33, 170);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label6.Location = new System.Drawing.Point(55, 280);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 28);
-            this.label6.TabIndex = 5;
+            this.label6.Size = new System.Drawing.Size(134, 25);
             this.label6.Text = "Points Earned:";
             // 
             // lblPointsAdded
-            // 
             this.lblPointsAdded.AutoSize = true;
-            this.lblPointsAdded.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointsAdded.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblPointsAdded.ForeColor = System.Drawing.Color.Green;
-            this.lblPointsAdded.Location = new System.Drawing.Point(230, 170);
+            this.lblPointsAdded.Location = new System.Drawing.Point(220, 280);
             this.lblPointsAdded.Name = "lblPointsAdded";
-            this.lblPointsAdded.Size = new System.Drawing.Size(66, 28);
-            this.lblPointsAdded.TabIndex = 6;
-            this.lblPointsAdded.Text = "+ 100";
+            this.lblPointsAdded.Size = new System.Drawing.Size(67, 25);
+            this.lblPointsAdded.Text = "+100";
             // 
-            // label8
-            // 
+            // label8 - Total Points
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(33, 230);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label8.Location = new System.Drawing.Point(55, 320);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(193, 28);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Your Available Points:";
+            this.label8.Size = new System.Drawing.Size(153, 25);
+            this.label8.Text = "New Total Points:";
             // 
-            // lblCurrentPoints
+            // lblTotalPoints
+            this.lblTotalPoints.AutoSize = true;
+            this.lblTotalPoints.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPoints.Location = new System.Drawing.Point(220, 320);
+            this.lblTotalPoints.Name = "lblTotalPoints";
+            this.lblTotalPoints.Size = new System.Drawing.Size(53, 25);
+            this.lblTotalPoints.Text = "600";
             // 
-            this.lblCurrentPoints.AutoSize = true;
-            this.lblCurrentPoints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentPoints.Location = new System.Drawing.Point(230, 230);
-            this.lblCurrentPoints.Name = "lblCurrentPoints";
-            this.lblCurrentPoints.Size = new System.Drawing.Size(48, 28);
-            this.lblCurrentPoints.TabIndex = 8;
-            this.lblCurrentPoints.Text = "500";
+            // lblThankYou
+            this.lblThankYou.AutoSize = true;
+            this.lblThankYou.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic);
+            this.lblThankYou.ForeColor = System.Drawing.Color.Gray;
+            this.lblThankYou.Location = new System.Drawing.Point(160, 400);
+            this.lblThankYou.Name = "lblThankYou";
+            this.lblThankYou.Size = new System.Drawing.Size(250, 25);
+            this.lblThankYou.Text = "Thank you for your business!";
             // 
-            // chkUsePoints
+            // btnOK
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(0, 123, 255);
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.Location = new System.Drawing.Point(210, 460);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(180, 50);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            this.chkUsePoints.AutoSize = true;
-            this.chkUsePoints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUsePoints.Location = new System.Drawing.Point(38, 270);
-            this.chkUsePoints.Name = "chkUsePoints";
-            this.chkUsePoints.Size = new System.Drawing.Size(161, 32);
-            this.chkUsePoints.TabIndex = 9;
-            this.chkUsePoints.Text = "Use my points";
-            this.chkUsePoints.UseVisualStyleBackColor = true;
-            this.chkUsePoints.CheckedChanged += new System.EventHandler(this.chkUsePoints_CheckedChanged);
-            // 
-            // numPointsToUse
-            // 
-            this.numPointsToUse.Enabled = false;
-            this.numPointsToUse.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.numPointsToUse.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            this.numPointsToUse.Location = new System.Drawing.Point(235, 270);
-            this.numPointsToUse.Name = "numPointsToUse";
-            this.numPointsToUse.Size = new System.Drawing.Size(120, 34);
-            this.numPointsToUse.TabIndex = 10;
-            this.numPointsToUse.ValueChanged += new System.EventHandler(this.numPointsToUse_ValueChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.label10.Location = new System.Drawing.Point(32, 350);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 31);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Final Price:";
-            // 
-            // lblReducedPrice
-            // 
-            this.lblReducedPrice.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReducedPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.lblReducedPrice.Location = new System.Drawing.Point(228, 344);
-            this.lblReducedPrice.Name = "lblReducedPrice";
-            this.lblReducedPrice.Size = new System.Drawing.Size(200, 41);
-            this.lblReducedPrice.TabIndex = 12;
-            this.lblReducedPrice.Text = "৳9,995";
-            // 
-            // btnCompletePurchase
-            // 
-            this.btnCompletePurchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.btnCompletePurchase.FlatAppearance.BorderSize = 0;
-            this.btnCompletePurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompletePurchase.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnCompletePurchase.ForeColor = System.Drawing.Color.White;
-            this.btnCompletePurchase.Location = new System.Drawing.Point(38, 410);
-            this.btnCompletePurchase.Name = "btnCompletePurchase";
-            this.btnCompletePurchase.Size = new System.Drawing.Size(390, 55);
-            this.btnCompletePurchase.TabIndex = 13;
-            this.btnCompletePurchase.Text = "Complete Purchase";
-            this.btnCompletePurchase.UseVisualStyleBackColor = false;
-            this.btnCompletePurchase.Click += new System.EventHandler(this.btnCompletePurchase_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(38, 330);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 1);
-            this.panel1.TabIndex = 14;
-            // 
-            // PaySlip
-            // 
+            // PaySlip Form settings
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(462, 493);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnCompletePurchase);
-            this.Controls.Add(this.lblReducedPrice);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.numPointsToUse);
-            this.Controls.Add(this.chkUsePoints);
-            this.Controls.Add(this.lblCurrentPoints);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.lblPointsAdded);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblProductPrice);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(600, 600);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblTransactionInfo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblProductName);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPointsAdded);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblTotalPoints);
+            this.Controls.Add(this.lblThankYou);
+            this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PaySlip";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Finalize Purchase";
+            this.Text = "Purchase Receipt";
             this.Load += new System.EventHandler(this.PaySlip_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numPointsToUse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -235,16 +201,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblProductPrice;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblPointsAdded;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblCurrentPoints;
-        private System.Windows.Forms.CheckBox chkUsePoints;
-        private System.Windows.Forms.NumericUpDown numPointsToUse;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblReducedPrice;
-        private System.Windows.Forms.Button btnCompletePurchase;
+        private System.Windows.Forms.Label lblTotalPoints;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTransactionInfo;
+        private System.Windows.Forms.Label lblThankYou;
     }
 }

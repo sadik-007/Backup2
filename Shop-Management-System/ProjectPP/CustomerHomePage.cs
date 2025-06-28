@@ -26,7 +26,7 @@ namespace ProjectPP
             LoadProductsFromDatabase();
         }
 
-        private void LoadProductsFromDatabase(string categoryFilter = null, string searchTerm = null)
+        public void LoadProductsFromDatabase(string categoryFilter = null, string searchTerm = null)
         {
             pnlBody.Controls.Clear();
             try
@@ -37,12 +37,10 @@ namespace ProjectPP
                     var queryBuilder = new StringBuilder("SELECT * FROM Product_Details");
                     var conditions = new List<string>();
 
-                    // Add category condition if a specific category (not "ALL") is chosen
                     if (!string.IsNullOrEmpty(categoryFilter) && categoryFilter.ToUpper() != "ALL")
                     {
                         conditions.Add("Product_type = @Category");
                     }
-                    // Add search condition if a search term is provided
                     if (!string.IsNullOrEmpty(searchTerm))
                     {
                         conditions.Add("(Model LIKE @SearchTerm OR Brand_name LIKE @SearchTerm)");
@@ -68,7 +66,15 @@ namespace ProjectPP
                         {
                             if (!reader.HasRows)
                             {
-                                Label noProductsLabel = new Label { Text = "No products found.", Font = new Font("Segoe UI", 14F), ForeColor = Color.Gray, AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Size = pnlBody.Size };
+                                Label noProductsLabel = new Label
+                                {
+                                    Text = "No products found.",
+                                    Font = new Font("Segoe UI", 14F),
+                                    ForeColor = Color.Gray,
+                                    AutoSize = false,
+                                    TextAlign = ContentAlignment.MiddleCenter,
+                                    Size = pnlBody.Size
+                                };
                                 pnlBody.Controls.Add(noProductsLabel);
                                 return;
                             }
@@ -125,8 +131,13 @@ namespace ProjectPP
             buyButton.FlatAppearance.BorderSize = 0;
             buyButton.Click += (s, ev) =>
             {
-                PurchasePage purchaseForm = new PurchasePage(imageData, model, currentPrice, productCode, productType, keyFeatures, status);
+                this.Hide();
+                // Pass _customerName as username parameter
+                PurchasePage purchaseForm = new PurchasePage(imageData, model, currentPrice, productCode, productType, keyFeatures, status, _customerName);
                 purchaseForm.ShowDialog(this);
+
+                // Close the CustomerHomePage after the PurchasePage is closed
+                this.Close();
             };
 
             actionsPanel.Controls.Add(detailsLink);

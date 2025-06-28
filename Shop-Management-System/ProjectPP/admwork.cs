@@ -48,8 +48,9 @@ namespace ProjectPP
 
         private void workorder_Click(object sender, EventArgs e)
         {
-            
-
+            admorder admorder = new admorder();
+            admorder.Show();
+            this.Hide();
         }
     }
 }

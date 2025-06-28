@@ -64,6 +64,12 @@
     <Compile Include="admnotifi.Designer.cs">
       <DependentUpon>admnotifi.cs</DependentUpon>
     </Compile>
+    <Compile Include="admorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admorder.Designer.cs">
+      <DependentUpon>admorder.cs</DependentUpon>
+    </Compile>
     <Compile Include="admreg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admnotifi.resx">
       <DependentUpon>admnotifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admorder.resx">
+      <DependentUpon>admorder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admreg.resx">
       <DependentUpon>admreg.cs</DependentUpon>

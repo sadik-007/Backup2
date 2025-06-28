@@ -21,8 +21,22 @@ namespace ProjectPP
 
         private void SalesmanHomePage_Load(object sender, EventArgs e)
         {
-            lblWelcomeUser.Text = "👨‍💼 Welcome, " + _salesmanName;
+            lblWelcomeUser.Text = "👤 Welcome, " + _salesmanName;
             LoadProductsFromDatabase();
+
+            // Hook all category buttons
+            btnAll.Click += CategoryButton_Click;
+            btnTV.Click += CategoryButton_Click;
+            btnPhone.Click += CategoryButton_Click;
+            btnLaptop.Click += CategoryButton_Click;
+            btnMonitor.Click += CategoryButton_Click;
+            btnAccessories.Click += CategoryButton_Click;
+            btnDesktop.Click += CategoryButton_Click;
+            btnMobile.Click += CategoryButton_Click;
+            btnTablet.Click += CategoryButton_Click;
+            btnCamera.Click += CategoryButton_Click;
+            btnHeadphones.Click += CategoryButton_Click;
+            btnWebcam.Click += CategoryButton_Click;
         }
 
         private void LoadProductsFromDatabase(string categoryFilter = null, string searchTerm = null)
@@ -57,7 +71,7 @@ namespace ProjectPP
                         {
                             if (!reader.HasRows)
                             {
-                                Label noProductsLabel = new Label
+                                pnlBody.Controls.Add(new Label
                                 {
                                     Text = "No products found.",
                                     Font = new Font("Segoe UI", 14F),
@@ -65,18 +79,12 @@ namespace ProjectPP
                                     AutoSize = false,
                                     TextAlign = ContentAlignment.MiddleCenter,
                                     Size = pnlBody.Size
-                                };
-                                pnlBody.Controls.Add(noProductsLabel);
+                                });
                                 return;
                             }
 
                             while (reader.Read())
                             {
-                                // Get available quantity safely
-                                int availableQty = 0;
-                                if (!(reader["Available_Product"] is DBNull))
-                                    availableQty = Convert.ToInt32(reader["Available_Product"]);
-
                                 pnlBody.Controls.Add(CreateProductCard(
                                     reader["Product_code"].ToString(),
                                     reader["Image"] as byte[],
@@ -86,8 +94,7 @@ namespace ProjectPP
                                     reader["Status"].ToString(),
                                     reader["Brand_name"].ToString(),
                                     reader["Key_Features"].ToString(),
-                                    reader["Product_type"].ToString(),
-                                    availableQty
+                                    reader["Product_type"].ToString()
                                 ));
                             }
                         }
@@ -96,129 +103,52 @@ namespace ProjectPP
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to load products. Error: " + ex.Message, "Database Error");
+                MessageBox.Show("Error loading products: " + ex.Message, "Database Error");
             }
         }
 
-        private Panel CreateProductCard(string productCode, byte[] imageData, string model, decimal currentPrice, decimal regularPrice, string status, string brand, string keyFeatures, string productType, int availableQty)
+        private Panel CreateProductCard(string productCode, byte[] imageData, string model, decimal currentPrice, decimal regularPrice, string status, string brand, string keyFeatures, string productType)
         {
             Panel card = new Panel
             {
                 Width = 260,
-                Height = 380,
+                Height = 360,
                 BackColor = Color.White,
                 Margin = new Padding(15),
                 BorderStyle = BorderStyle.FixedSingle
             };
 
-            PictureBox pic = new PictureBox
-            {
-                Dock = DockStyle.Top,
-                Height = 150,
-                SizeMode = PictureBoxSizeMode.Zoom
-            };
+            PictureBox pic = new PictureBox { Dock = DockStyle.Top, Height = 150, SizeMode = PictureBoxSizeMode.Zoom };
             if (imageData != null && imageData.Length > 0)
-            {
-                using (MemoryStream ms = new MemoryStream(imageData))
-                    pic.Image = Image.FromStream(ms);
-            }
+                using (MemoryStream ms = new MemoryStream(imageData)) { pic.Image = Image.FromStream(ms); }
             else
-            {
                 pic.BackColor = Color.Gainsboro;
-            }
 
-            Label brandLabel = new Label
-            {
-                Text = brand,
-                Font = new Font("Segoe UI", 9F),
-                ForeColor = Color.Gray,
-                Dock = DockStyle.Top,
-                Padding = new Padding(10, 5, 10, 0),
-                Height = 30
-            };
-            Label nameLabel = new Label
-            {
-                Text = model,
-                Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                Dock = DockStyle.Top,
-                Padding = new Padding(10, 0, 10, 5),
-                Height = 55
-            };
-            Label statusLabel = new Label
-            {
-                Text = status,
-                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                Dock = DockStyle.Top,
-                Padding = new Padding(10, 0, 10, 5),
-                Height = 30,
-                ForeColor = status.ToLower() == "in stock" ? Color.Green : Color.Red
-            };
+            Label brandLabel = new Label { Text = brand, Font = new Font("Segoe UI", 9F), ForeColor = Color.Gray, Dock = DockStyle.Top, Padding = new Padding(10, 5, 10, 0), Height = 30 };
+            Label nameLabel = new Label { Text = model, Font = new Font("Segoe UI", 10F, FontStyle.Bold), Dock = DockStyle.Top, Padding = new Padding(10, 0, 10, 5), Height = 55 };
+            Label statusLabel = new Label { Text = status, Font = new Font("Segoe UI", 9F, FontStyle.Bold), Dock = DockStyle.Top, Padding = new Padding(10, 0, 10, 5), Height = 30 };
+            statusLabel.ForeColor = status.ToLower() == "in stock" ? Color.Green : Color.Red;
 
-            Panel pricePanel = new Panel
-            {
-                Dock = DockStyle.Top,
-                Height = 40,
-                Padding = new Padding(10, 0, 10, 0)
-            };
-            Label currentPriceLabel = new Label
-            {
-                Text = "৳" + currentPrice.ToString("N0"),
-                Font = new Font("Segoe UI", 12F, FontStyle.Bold),
-                ForeColor = Color.FromArgb(0, 123, 255),
-                Dock = DockStyle.Left,
-                AutoSize = true
-            };
-            Label regularPriceLabel = new Label
-            {
-                Text = "৳" + regularPrice.ToString("N0"),
-                Font = new Font("Segoe UI", 10F, FontStyle.Strikeout),
-                ForeColor = Color.Gray,
-                Dock = DockStyle.Left,
-                AutoSize = true,
-                Padding = new Padding(10, 3, 0, 0)
-            };
+            Panel pricePanel = new Panel { Dock = DockStyle.Top, Height = 40, Padding = new Padding(10, 0, 10, 0) };
+            Label currentPriceLabel = new Label { Text = "৳" + currentPrice.ToString("N0"), Font = new Font("Segoe UI", 12F, FontStyle.Bold), ForeColor = Color.MediumSlateBlue, Dock = DockStyle.Left, AutoSize = true };
+            Label regularPriceLabel = new Label { Text = "৳" + regularPrice.ToString("N0"), Font = new Font("Segoe UI", 10F, FontStyle.Strikeout), ForeColor = Color.Gray, Dock = DockStyle.Left, AutoSize = true, Padding = new Padding(10, 3, 0, 0) };
             pricePanel.Controls.Add(regularPriceLabel);
             pricePanel.Controls.Add(currentPriceLabel);
 
-            FlowLayoutPanel actionsPanel = new FlowLayoutPanel
-            {
-                Dock = DockStyle.Bottom,
-                Height = 50,
-                Padding = new Padding(5),
-                FlowDirection = FlowDirection.LeftToRight
-            };
-            LinkLabel detailsLink = new LinkLabel
-            {
-                Text = "View Details",
-                Font = new Font("Segoe UI", 10F),
-                LinkColor = Color.DodgerBlue,
-                Margin = new Padding(5, 10, 20, 10),
-                AutoSize = true,
-                TabStop = false
-            };
-            detailsLink.LinkClicked += (s, e) =>
-            {
-                MessageBox.Show(keyFeatures, "Key Features: " + model);
-            };
+            FlowLayoutPanel actionsPanel = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 45, Padding = new Padding(5), FlowDirection = FlowDirection.LeftToRight };
+            LinkLabel detailsLink = new LinkLabel { Text = "View Details", Font = new Font("Segoe UI", 10F), LinkColor = Color.DodgerBlue, Margin = new Padding(5, 5, 20, 5), AutoSize = true, TabStop = false };
+            detailsLink.LinkClicked += (s, ev) => { MessageBox.Show(keyFeatures, "Key Features: " + model); };
 
-            Button sellButton = new Button
+            Button buyButton = new Button { Text = "Buy Now", Font = new Font("Segoe UI", 10F, FontStyle.Bold), BackColor = Color.FromArgb(40, 167, 69), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Size = new Size(120, 35) };
+            buyButton.FlatAppearance.BorderSize = 0;
+            buyButton.Click += (s, ev) =>
             {
-                Text = "Sell",
-                Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                BackColor = Color.OrangeRed,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
-                Size = new Size(120, 35)
-            };
-            sellButton.FlatAppearance.BorderSize = 0;
-            sellButton.Click += (s, e) =>
-            {
-                SellItem sellForm = new SellItem(imageData, model, currentPrice, productCode, productType, keyFeatures, availableQty);
-                sellForm.ShowDialog(this);
+                PurchasePage purchaseForm = new PurchasePage(imageData, model, currentPrice, productCode, productType, keyFeatures, status);
+                purchaseForm.ShowDialog(this);
             };
 
             actionsPanel.Controls.Add(detailsLink);
-            actionsPanel.Controls.Add(sellButton);
+            actionsPanel.Controls.Add(buyButton);
 
             card.Controls.Add(actionsPanel);
             card.Controls.Add(pricePanel);
@@ -230,30 +160,27 @@ namespace ProjectPP
             return card;
         }
 
-        private void lblShopName_Click(object sender, EventArgs e)
-        {
-            txtSearch.Text = "Search Products...";
-            txtSearch.ForeColor = Color.Gray;
-            LoadProductsFromDatabase();
-        }
-
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            if (sender is Button clickedButton)
+            Button clickedButton = sender as Button;
+            if (clickedButton != null)
             {
                 string category = clickedButton.Text;
                 txtSearch.Text = "Search Products...";
                 txtSearch.ForeColor = Color.Gray;
-                LoadProductsFromDatabase(category == "ALL" ? null : category);
+
+                if (category.ToUpper() == "ALL")
+                    LoadProductsFromDatabase(null, null);
+                else
+                    LoadProductsFromDatabase(category, null);
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text != "Search Products...")
-            {
-                LoadProductsFromDatabase(null, txtSearch.Text);
-            }
+            string searchTerm = txtSearch.Text;
+            if (searchTerm != "Search Products...")
+                LoadProductsFromDatabase(null, searchTerm);
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -277,12 +204,36 @@ namespace ProjectPP
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.Focused && txtSearch.Text != "Search Products...")
-            {
                 LoadProductsFromDatabase(null, txtSearch.Text);
-            }
         }
 
         private void lblWelcomeUser_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Logged in as: " + _salesmanName, "User Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Starting starting = new Starting();
+            starting.Show();
+            this.Close();
+        }
+
+        // Empty button event handlers kept for future use
+        private void btnMonitor_Click(object sender, EventArgs e) { }
+        private void btnAccessories_Click(object sender, EventArgs e) { }
+        private void btnTV_Click(object sender, EventArgs e) { }
+        private void btnAll_Click(object sender, EventArgs e) { }
+        private void btnLaptop_Click(object sender, EventArgs e) { }
+        private void btnDesktop_Click(object sender, EventArgs e) { }
+        private void btnMobile_Click(object sender, EventArgs e) { }
+        private void btnPhone_Click(object sender, EventArgs e) { }
+        private void btnTablet_Click(object sender, EventArgs e) { }
+        private void btnCamera_Click(object sender, EventArgs e) { }
+        private void btnHeadphones_Click(object sender, EventArgs e) { }
+        private void btnWebcam_Click(object sender, EventArgs e) { }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
 
         }

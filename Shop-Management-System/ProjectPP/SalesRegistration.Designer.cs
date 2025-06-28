@@ -57,7 +57,7 @@
             // txtphnnum
             // 
             this.txtphnnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtphnnum.Location = new System.Drawing.Point(462, 327);
+            this.txtphnnum.Location = new System.Drawing.Point(433, 288);
             this.txtphnnum.Multiline = true;
             this.txtphnnum.Name = "txtphnnum";
             this.txtphnnum.Size = new System.Drawing.Size(386, 46);
@@ -67,7 +67,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(458, 291);
+            this.label7.Location = new System.Drawing.Point(433, 261);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 24);
             this.label7.TabIndex = 49;
@@ -76,7 +76,7 @@
             // txtemail
             // 
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(460, 240);
+            this.txtemail.Location = new System.Drawing.Point(433, 217);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(387, 41);
@@ -86,7 +86,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(458, 205);
+            this.label6.Location = new System.Drawing.Point(433, 181);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 24);
             this.label6.TabIndex = 47;
@@ -95,7 +95,7 @@
             // txtconpass
             // 
             this.txtconpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtconpass.Location = new System.Drawing.Point(462, 488);
+            this.txtconpass.Location = new System.Drawing.Point(437, 459);
             this.txtconpass.Multiline = true;
             this.txtconpass.Name = "txtconpass";
             this.txtconpass.PasswordChar = '*';
@@ -106,7 +106,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(458, 462);
+            this.label5.Location = new System.Drawing.Point(433, 432);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 24);
             this.label5.TabIndex = 45;
@@ -115,7 +115,7 @@
             // txtname
             // 
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(462, 63);
+            this.txtname.Location = new System.Drawing.Point(437, 52);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(386, 44);
@@ -126,7 +126,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(458, 37);
+            this.label4.Location = new System.Drawing.Point(433, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 24);
             this.label4.TabIndex = 43;
@@ -142,7 +142,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(439, 723);
+            this.panel1.Size = new System.Drawing.Size(412, 723);
             this.panel1.TabIndex = 39;
             // 
             // Salesman
@@ -207,12 +207,13 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.White;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(515, 541);
+            this.checkBox1.Location = new System.Drawing.Point(437, 504);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(114, 19);
             this.checkBox1.TabIndex = 38;
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // btncancelSales
             // 
@@ -230,9 +231,9 @@
             this.btnlogSales.BackColor = System.Drawing.Color.Blue;
             this.btnlogSales.Font = new System.Drawing.Font("Microsoft YaHei", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogSales.ForeColor = System.Drawing.Color.Snow;
-            this.btnlogSales.Location = new System.Drawing.Point(650, 541);
+            this.btnlogSales.Location = new System.Drawing.Point(580, 504);
             this.btnlogSales.Name = "btnlogSales";
-            this.btnlogSales.Size = new System.Drawing.Size(160, 58);
+            this.btnlogSales.Size = new System.Drawing.Size(152, 55);
             this.btnlogSales.TabIndex = 36;
             this.btnlogSales.Text = "Register";
             this.btnlogSales.UseVisualStyleBackColor = false;
@@ -241,17 +242,17 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(460, 407);
+            this.txtPass.Location = new System.Drawing.Point(437, 375);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(387, 43);
+            this.txtPass.Size = new System.Drawing.Size(382, 43);
             this.txtPass.TabIndex = 35;
             // 
             // txtusername
             // 
             this.txtusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.Location = new System.Drawing.Point(462, 149);
+            this.txtusername.Location = new System.Drawing.Point(433, 126);
             this.txtusername.Multiline = true;
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(386, 41);
@@ -261,7 +262,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(461, 375);
+            this.label2.Location = new System.Drawing.Point(433, 347);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 41;
@@ -272,7 +273,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 113);
+            this.label1.Location = new System.Drawing.Point(433, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 24);
             this.label1.TabIndex = 40;
@@ -282,7 +283,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 609);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(886, 571);
             this.Controls.Add(this.txtphnnum);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtemail);
@@ -299,7 +301,7 @@
             this.Controls.Add(this.txtusername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SalesRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesRegistration";

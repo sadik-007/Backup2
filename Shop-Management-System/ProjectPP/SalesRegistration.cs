@@ -1,7 +1,6 @@
-﻿using System;
+﻿
+using System;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjectPP
@@ -15,15 +14,13 @@ namespace ProjectPP
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
+        private void txtname_TextChanged(object sender, EventArgs e) { }
 
-        private void txtname_TextChanged(object sender, EventArgs e)
-        {
-        }
+        private void txtusername_TextChanged(object sender, EventArgs e) { }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e) { }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             txtPass.PasswordChar = checkBox1.Checked ? '\0' : '*';
             txtconpass.PasswordChar = checkBox1.Checked ? '\0' : '*';
@@ -36,16 +33,16 @@ namespace ProjectPP
             this.Hide();
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel3_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Starting back1 = new Starting();
-            back1.Show();
+            Starting starting = new Starting();
+            starting.Show();
             this.Hide();
         }
 
         private void btnlogSales_Click(object sender, EventArgs e)
         {
-            string Name = txtname.Text;
+            string Name = txtname.Text.Trim();
             string username = txtusername.Text.Trim();
             string gmail = txtemail.Text.Trim();
             string phonenum = txtphnnum.Text.Trim();
@@ -71,7 +68,7 @@ namespace ProjectPP
                 {
                     sqlCon.Open();
 
-                    string checkUserQuery = "SELECT COUNT(1) FROM Customer WHERE User_Name = @UserName";
+                    string checkUserQuery = "SELECT COUNT(1) FROM SalesmanLogin WHERE User_Name = @UserName";
                     using (SqlCommand checkUserCmd = new SqlCommand(checkUserQuery, sqlCon))
                     {
                         checkUserCmd.Parameters.AddWithValue("@UserName", username);
@@ -84,7 +81,7 @@ namespace ProjectPP
                         }
                     }
 
-                    string insertQuery = "INSERT INTO Customer (Full_Name, User_Name, Gmail, Contact_Number, Password) VALUES (@FullName, @UserName, @Gmail, @Contact, @Password)";
+                    string insertQuery = "INSERT INTO SalesmanLogin (Full_Name, User_Name, Gmail, Contact_Number, Password) VALUES (@FullName, @UserName, @Gmail, @Contact, @Password)";
                     using (SqlCommand insertCmd = new SqlCommand(insertQuery, sqlCon))
                     {
                         insertCmd.Parameters.AddWithValue("@FullName", Name);
@@ -105,17 +102,6 @@ namespace ProjectPP
             {
                 MessageBox.Show("An error occurred during registration: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void txtusername_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void linkLabel3_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Starting starting = new Starting();
-            starting.Show();
-            this.Close();
         }
     }
 }

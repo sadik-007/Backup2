@@ -6,6 +6,9 @@ namespace ProjectPP
 {
     public partial class SalesmanLog : Form
     {
+
+        private string Con = @"Server=SADIK\SQLEXPRESS;Database=Practice Database;Trusted_Connection=True;";
+
         public SalesmanLog()
         {
             InitializeComponent();
@@ -18,39 +21,45 @@ namespace ProjectPP
 
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Enter both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter both username and password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string connectionString = @"Server=SADIK\SQLEXPRESS;Database=Practice Database;Trusted_Connection=True;";
-
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlConnection sqlCon = new SqlConnection(Con))
                 {
-                    con.Open();
-                    string query = "SELECT COUNT(*) FROM Salesmen WHERE User_Name = @username AND Password = @password";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    sqlCon.Open();
+
+                    string query = "SELECT COUNT(1) FROM SalesmanLogin WHERE User_Name = @username AND Password = @password";
+                    using (SqlCommand cmd = new SqlCommand(query, sqlCon))
                     {
                         cmd.Parameters.AddWithValue("@username", user);
                         cmd.Parameters.AddWithValue("@password", pass);
 
                         int count = (int)cmd.ExecuteScalar();
 
-                        if (count > 0)
+                        if (count == 1)
                         {
-                            MessageBox.Show("Login Successful", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SalesmanHomePage dashboard = new SalesmanHomePage(user);
+                            dashboard.Show();
+                            this.Hide();
                         }
                         else
                         {
                             MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            SalesmanHomePage slaesmanhome = new SalesmanHomePage(user);
+                            slaesmanhome.Show();
+                            this.Hide();
+
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error during login: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -59,47 +68,40 @@ namespace ProjectPP
             txtPass.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
 
-        private void btncancelSales_Click(object sender, EventArgs e)
+        private void regis_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close();
+            SalesRegistration registration = new SalesRegistration();
+            registration.Show();
+            this.Hide();
+        }
+
+        private void txtusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Starting back = new Starting();
-            back.Show();
+            Starting back1 = new Starting();
+            back1.Show();
             this.Hide();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SalesRegistration registration = new SalesRegistration();
-            registration.Show();
+            ResetSalesmanPass resetForm = new ResetSalesmanPass();
+            resetForm.Show();
             this.Hide();
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e) 
-        {
-
-        }
-        private void txtusername_TextChanged(object sender, EventArgs e) { }
-        private void label1_Click(object sender, EventArgs e) { }
-        private void label2_Click(object sender, EventArgs e) { }
-        private void pictureBox1_Click(object sender, EventArgs e) { }
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
-        private void label3_Click(object sender, EventArgs e) { }
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { }
-
-        private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SalesRegistration registration = new SalesRegistration();
-            registration.Show();
-            this.Hide();
-        }
-
-        private void txtusername_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

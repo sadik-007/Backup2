@@ -129,3 +129,36 @@ C:\Users\User\Downloads\Backup\Shop-Management-System\ProjectPP\obj\Debug\Projec
 C:\Users\User\Downloads\Backup\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.pdb
 C:\Users\User\Downloads\Backup\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.ResetSalesmanPass.resources
 C:\Users\User\Downloads\Backup\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.NewPassSales.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\bin\Debug\ProjectPP.exe.config
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\bin\Debug\ProjectPP.exe
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\bin\Debug\ProjectPP.pdb
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.csproj.AssemblyReference.cache
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.exe.config
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.AdminLog.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.CustomerHomePage.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.DealerLogin.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.DealerRegistration.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.DealerReset.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Form1.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Form2.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.NewPass.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.NewPassSales.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.ProductEntry.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Properties.Resources.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.PurchasePage.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Reset.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.ResetSalesmanPass.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.SalesmanLog.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.SalesRegistration.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.Starting.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.csproj.GenerateResource.cache
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.csproj.CoreCompileInputs.cache
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.exe
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.pdb
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.SalesmanHomePage.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admreg.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admresetpass.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admwork.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admnotifi.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.admrequest.resources
+D:\C# Code\Backup2\Shop-Management-System\ProjectPP\obj\Debug\ProjectPP.SellItem.resources

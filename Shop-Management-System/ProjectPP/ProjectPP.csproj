@@ -52,6 +52,36 @@
     <Compile Include="AdminLog.Designer.cs">
       <DependentUpon>AdminLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="admnotifi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admnotifi.Designer.cs">
+      <DependentUpon>admnotifi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admreg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admreg.Designer.cs">
+      <DependentUpon>admreg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admrequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admrequest.Designer.cs">
+      <DependentUpon>admrequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admresetpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admresetpass.Designer.cs">
+      <DependentUpon>admresetpass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admwork.Designer.cs">
+      <DependentUpon>admwork.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +156,12 @@
     <Compile Include="ResetSalesmanPass.Designer.cs">
       <DependentUpon>ResetSalesmanPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesmanHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanHomePage.Designer.cs">
+      <DependentUpon>SalesmanHomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesmanLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +174,12 @@
     <Compile Include="SalesRegistration.Designer.cs">
       <DependentUpon>SalesRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellItem.Designer.cs">
+      <DependentUpon>SellItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Starting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +188,21 @@
     </Compile>
     <EmbeddedResource Include="AdminLog.resx">
       <DependentUpon>AdminLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admnotifi.resx">
+      <DependentUpon>admnotifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admreg.resx">
+      <DependentUpon>admreg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admrequest.resx">
+      <DependentUpon>admrequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admresetpass.resx">
+      <DependentUpon>admresetpass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admwork.resx">
+      <DependentUpon>admwork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
@@ -193,11 +250,17 @@
     <EmbeddedResource Include="ResetSalesmanPass.resx">
       <DependentUpon>ResetSalesmanPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesmanHomePage.resx">
+      <DependentUpon>SalesmanHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesmanLog.resx">
       <DependentUpon>SalesmanLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesRegistration.resx">
       <DependentUpon>SalesRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellItem.resx">
+      <DependentUpon>SellItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Starting.resx">
       <DependentUpon>Starting.cs</DependentUpon>
